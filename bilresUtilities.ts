@@ -83,7 +83,8 @@ namespace Bilres1_1 {
      * This function is here to save new highscores
      */
     //%block
-    export function saveScore(score: number) {
+    export function saveScore() {
+        let score: number=input.runningTime()//1000
         let scoreString: string=score.toString()
         basic.showString("SCORE: ")
         basic.showString(scoreString)
@@ -128,7 +129,7 @@ namespace Bilres1_1 {
      * This function shows an animation when game is over
      */
     //%block
-    export function gameOverAnimation() {
+    export function gameOver() {
         Bilres1_1.drawGhost()
         basic.pause(500)
         basic.clearScreen()
@@ -140,6 +141,7 @@ namespace Bilres1_1 {
         Bilres1_1.drawGhost()
         basic.pause(500)
         basic.clearScreen()
+        Bilres1_1.saveScore()
     }
     
     /**
