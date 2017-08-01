@@ -66,8 +66,8 @@ namespace Bilres1_1 {
      * This funciton returns true if the car has crashed into oncoming traffic
      */
     //%block
-    export function carHasCrashed(car_x: number) {
-        return led.point(car_x,4)
+    export function carHasCrashed(carPosition: number) {
+        return led.point(carPosition,4)
     }
 
     /**
@@ -141,29 +141,28 @@ namespace Bilres1_1 {
         Bilres1_1.drawGhost()
         basic.pause(500)
         basic.clearScreen()
-        Bilres1_1.saveScore()
     }
     
     /**
      *This function lets you move the car one place to the left
     */
     //%block
-    export function moveLeft(car_x: number) {
-        led.toggle(car_x, 4)
-        car_x -= 1
-        led.toggle(car_x, 4)
-        return car_x
+    export function moveLeft(carPosition: number) {
+        led.toggle(carPosition, 4)
+        carPosition -= 1
+        led.toggle(carPosition, 4)
+        return carPosition
     }
 
     /**
      *This function lets you move the car one place to the right
     */
     //%block
-    export function moveRight(car_x: number) {
-        led.toggle(car_x, 4)
-        car_x += 1
-        led.toggle(car_x, 4)
-        return car_x
+    export function moveRight(carPosition: number) {
+        led.toggle(carPosition, 4)
+        carPosition += 1
+        led.toggle(carPosition, 4)
+        return carPosition
     }
 
     /**
