@@ -5,11 +5,12 @@
     "license": "MIT",
     "dependencies": {
         "core": "*",
-        "radio": "*"
+        "radio": "*",
+        "files": "https://github.com/Microsoft/pxt-filesystem.git"
     },
     "files": [
         "README.md",
-        "main.ts"
+        "bilresUtilities.ts"
     ],
     "testFiles": [
         "test.ts"
