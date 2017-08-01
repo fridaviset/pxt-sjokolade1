@@ -84,7 +84,8 @@ namespace Bilres1_1 {
      */
     //%block
     export function saveScore() {
-        let score: number=input.runningTime()//1000
+        let score: number = input.runningTime()
+        score=~~(score/1000)
         let scoreString: string=score.toString()
         basic.showString("SCORE: ")
         basic.showString(scoreString)
