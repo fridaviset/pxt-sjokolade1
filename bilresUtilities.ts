@@ -164,5 +164,17 @@ namespace Bilres1_1 {
         return car_x
     }
 
+    /**
+     * This function return true when its time for the cars to move
+     */
+    export function greenLight() {
+        if ((input.runningTime() % 500 > 0) && (input.runningTime() % 500 < 20)) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
 }
 
