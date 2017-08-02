@@ -89,6 +89,7 @@ namespace Bilres1_1 {
         let highscore: number=files.settingsReadNumber("Highscore")
         if (highscore == -1) {
             files.settingsSaveNumber("Highscore", score)
+            basic.showString("NEW HIGHSCORE!")
         }
         else if (highscore < score) {
             files.settingsSaveNumber("Highscore", score)
@@ -100,6 +101,9 @@ namespace Bilres1_1 {
             basic.showString(highScoreString)
         }
         serial.writeNumber(files.settingsReadNumber("Highscore"))
+        while(true){
+            basic.pause(2000)
+        }
 
         
 
