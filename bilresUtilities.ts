@@ -2,7 +2,6 @@ namespace Bilres1_1 {
     /**
      * This function should detect the formation of cars on a given line and convert it to a number
      */
-    //%block
     export function code_line(line_number: number) {
         let multiplikator: number = 1
         let coded_line: number = 0
@@ -23,7 +22,6 @@ namespace Bilres1_1 {
     /**
      * This function should convert a number to a formation of cars on a horizontal line
      */
-    //%block
     export function decode_line(line_number: number, coded_line: number) {
         let x: number = 0
         let multiplikator: number = 1
@@ -73,7 +71,6 @@ namespace Bilres1_1 {
     /**
      * This function is here to generate random traffic
      */
-    //%block
     export function random_traffic() {
         let all_possible_lines = [0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 16, 17, 18, 20, 24]
         let random_pick=Math.random(16)
@@ -85,7 +82,7 @@ namespace Bilres1_1 {
     //%block
     export function saveScore() {
         let score: number = input.runningTime()
-        score=~~(score/1000)
+        score=(score/1000)
         let scoreString: string=score.toString()
         basic.showString("SCORE: ")
         basic.showString(scoreString)
@@ -112,7 +109,6 @@ namespace Bilres1_1 {
     /**
      * This function quickly draws a ghost
      */
-    //%block
     export function drawGhost() {
         for (let x= 0; x < 5; x++){
             for (let y= 0; y < 5; y++){
@@ -130,7 +126,7 @@ namespace Bilres1_1 {
      * This function shows an animation when game is over
      */
     //%block
-    export function gameOver() {
+    export function gameOverAnimation() {
         Bilres1_1.drawGhost()
         basic.pause(500)
         basic.clearScreen()
@@ -167,11 +163,11 @@ namespace Bilres1_1 {
     }
 
     /**
-     * This function return true when its time for the cars to move
+     * This function return true when its time for the cars to move, and false when they should wait
      */
     //%block
     export function greenLight() {
-        if ((input.runningTime() % 500 > 0) && (input.runningTime() % 500 < 20)) {
+        if (input.runningTime() % 500 < 250) {
             return true
         }
         else {
